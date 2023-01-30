@@ -1,18 +1,18 @@
 <template>
 <div>
-  <SkeletonStructure/>
-  ></div>
+  <SkeletonStructure></SkeletonStructure>
+  </div>
 </template>
 
 <script>
-import SkeletonStructure from './components/SkeletonStructure.vue'
+import SkeletonStructure from './components/SkeletonStructure.vue';
 
 export default {
   name: 'App',
   components: {
     SkeletonStructure,
   }
-}
+};
 </script>
 
 <style>
