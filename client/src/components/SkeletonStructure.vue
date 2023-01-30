@@ -1,8 +1,8 @@
 <template>
 <nav class="navbar navbar-expand-md navbar-light bcg-color">
   <a class="navbar-brand custom-text" href="#">Firm Name</a>
-  <button class="navbar-toggler  tbncolor" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon  "></span>
+  <button class="navbar-toggler collapse-button-clr" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
@@ -21,6 +21,11 @@
     </ul>
   </div>
 </nav>
+
+<footer class="footer-class">
+
+</footer>
+
 </template>
 
 <script>
@@ -40,7 +45,10 @@ ul{
    
     background-color: #1c1f23;
 }
-.tbncolor{
+.collapse-button-clr{
     background-color: #c09b6a;
+}
+.footer-class{
+  background-color: #1c1f23;
 }
 </style>
