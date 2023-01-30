@@ -1,11 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-
+<div>
+  <SkeletonStructure/>
+  ></div>
 </template>
 
 <script>
+import SkeletonStructure from './components/SkeletonStructure.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    SkeletonStructure,
+  }
 }
 </script>
 
@@ -18,5 +24,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
 </style>
