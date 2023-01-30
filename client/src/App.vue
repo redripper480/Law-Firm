@@ -1,3 +1,4 @@
+
 <template>
 <div>
   <SkeletonStructure></SkeletonStructure>
@@ -8,6 +9,7 @@
 import SkeletonStructure from './components/SkeletonStructure.vue';
 
 export default {
+  
   name: 'App',
   components: {
     SkeletonStructure,
@@ -22,6 +24,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 </style>
