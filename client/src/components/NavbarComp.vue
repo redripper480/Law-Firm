@@ -59,6 +59,7 @@ ul {
 }
 .navbar-hyperlink-spacing{
 margin-right: 20px;
-  
 }
+
+
 </style>

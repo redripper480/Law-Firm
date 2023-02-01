@@ -20,13 +20,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  padding: 0 30px 0 30px;
+  padding: 0 1.4vw 0 1.4vw;
   background-color: #1c1f23;
   height: 100vh;
 }
-@media (max-width: 800px) {
- #app {
-  padding: 0px;
- } 
-}
+
 </style>
