@@ -52,7 +52,7 @@ export default {
 @media(min-width: 800px) and (max-width: 1200px){
 
   .carousel-inner img{
-  height: 45vh;
+  height: 50vh;
   object-fit: cover;
 
   }
@@ -60,7 +60,7 @@ export default {
 @media(min-width: 1201px){
 
   .carousel-inner img{
-  height: 60vh;
+  height: 70vh;
   object-fit: cover;
 
   }
