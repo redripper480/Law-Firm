@@ -8,13 +8,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="" alt="First slide">
+      <img class="d-block w-100" src="../assets/1.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="" alt="Second slide">
+      <img class="d-block w-100" src="../assets/2.jpeg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="" alt="Third slide">
+      <img class="d-block w-100" src="../assets/3.png" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -44,16 +44,13 @@ export default {
 </script>
 
 <style>
-img{
-  width: 50px;
-  border-radius: 20px;
-}
 .carousel-item{
   background-color: rgb(220, 218, 178);
 }
-@media(max-width: 799px){
+@media(max-width: 800px){
   .carousel-item{
   height: 35vh;
+  width: 100vh;
   }
 }
 @media(min-width: 800px) and (max-width: 1200px){
