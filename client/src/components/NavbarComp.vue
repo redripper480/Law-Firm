@@ -30,14 +30,11 @@
     </div>
   </nav>
 
-  <footer class="footer-class">
-    
-  </footer>
 </template>
 
 <script>
 export default {
-  name: "SkeletonStructure",
+  name: "NavbarComp",
 };
 </script>
 

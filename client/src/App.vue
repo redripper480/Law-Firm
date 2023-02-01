@@ -1,16 +1,15 @@
 <template>
-  <div>
-    <SkeletonStructure></SkeletonStructure>
-  </div>
+<HomePage></HomePage>
+
 </template>
 
 <script>
-import SkeletonStructure from "./components/SkeletonStructure.vue";
+import HomePage from "./components/HomePage.vue";
 
 export default {
   name: "App",
   components: {
-    SkeletonStructure,
+    HomePage,
   },
 };
 </script>
