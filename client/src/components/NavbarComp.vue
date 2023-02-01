@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-light bcg-color">
+  <nav class="navbar navbar-expand-md sticky-top navbar-light bcg-color ">
     <a class="navbar-brand custom-text" href="#">Firm Name</a>
     <button
       class="navbar-toggler collapse-button-clr"
@@ -12,7 +12,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse " id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
           <a class="nav-link custom-text navbar-hyperlink-spacing" href="#">Home</a>
@@ -39,6 +39,9 @@ export default {
 </script>
 
 <style>
+.absolute{
+  position: absolute;
+}
 ul {
   margin-left: auto;
 }
