@@ -48,17 +48,25 @@ export default {
   background-color: rgb(220, 218, 178);
 }
 @media(max-width: 800px){
+  img{
+    height: 35vh;
+  }
   .carousel-item{
   height: 35vh;
-  width: 100vh;
   }
 }
 @media(min-width: 800px) and (max-width: 1200px){
+  img{
+    height: 45vh;
+  }
   .carousel-item{
   height: 45vh;
   }
 }
 @media(min-width: 1201px){
+  img{
+    height: 60vh;
+  }
   .carousel-item{
   height: 60vh;
   }
