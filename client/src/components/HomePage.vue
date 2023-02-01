@@ -35,11 +35,6 @@ export default {
   components: {
     NavbarComp,
   },
-  // mounted(){
-  //   document.querySelector(".carousel").carousel({
-  //   interval: 100
-  // })
-  // }
 };
 </script>
 
@@ -48,27 +43,26 @@ export default {
   background-color: rgb(220, 218, 178);
 }
 @media(max-width: 800px){
-  img{
-    height: 35vh;
-  }
-  .carousel-item{
+
+  .carousel-inner img{
   height: 35vh;
+  object-fit: cover;
   }
 }
 @media(min-width: 800px) and (max-width: 1200px){
-  img{
-    height: 45vh;
-  }
-  .carousel-item{
+
+  .carousel-inner img{
   height: 45vh;
+  object-fit: cover;
+
   }
 }
 @media(min-width: 1201px){
-  img{
-    height: 60vh;
-  }
-  .carousel-item{
+
+  .carousel-inner img{
   height: 60vh;
+  object-fit: cover;
+
   }
 }
 </style>
