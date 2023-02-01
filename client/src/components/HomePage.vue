@@ -8,13 +8,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="../assets/1.jpg" alt="First slide">
+      <img class="d-block w-100" src="../assets/wide-firewatch.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="../assets/2.jpeg" alt="Second slide">
+      <img class="d-block w-100" src="../assets/wide-mountain.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="../assets/3.png" alt="Third slide">
+      <img class="d-block w-100" src="../assets/2.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -56,7 +56,7 @@ export default {
   }
 }
 @media(min-width: 800px) and (max-width: 1200px){
-  img{
+  img {
     height: 45vh;
   }
   .carousel-item{
