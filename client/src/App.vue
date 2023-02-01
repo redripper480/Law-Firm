@@ -1,19 +1,17 @@
-
 <template>
-<div>
-  <SkeletonStructure></SkeletonStructure>
+  <div>
+    <SkeletonStructure></SkeletonStructure>
   </div>
 </template>
 
 <script>
-import SkeletonStructure from './components/SkeletonStructure.vue';
+import SkeletonStructure from "./components/SkeletonStructure.vue";
 
 export default {
-  
-  name: 'App',
+  name: "App",
   components: {
     SkeletonStructure,
-  }
+  },
 };
 </script>
 
@@ -24,6 +22,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
 }
 </style>
