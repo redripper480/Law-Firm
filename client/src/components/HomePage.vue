@@ -1,6 +1,9 @@
 <template>
-  <NavbarComp />
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
+  <div class="container-fluid">
+      <NavbarComp />
+      <div style="height: 200vh;"></div>
+  </div>
+  <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -26,7 +29,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
+</div> -->
 </template>
 
 <script>
@@ -40,12 +43,12 @@ export default {
 </script>
 
 <style>
-.carousel-item{
+
+/*.carousel-item {
   background-color: rgb(220, 218, 178);
   position: relative;
-  
 }
-@media(max-width: 800px){
+ @media(max-width: 800px){
 
   .carousel-inner img{
   height: 35vh;
@@ -67,12 +70,10 @@ export default {
   object-fit: cover;
 
   }
-}
-#carouselButton{
+} */
+#carouselButton {
   position: absolute;
   top: 50%;
   right: 47.8%;
-  
-
 }
 </style>
