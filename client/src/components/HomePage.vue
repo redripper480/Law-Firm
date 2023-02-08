@@ -62,10 +62,10 @@
         </div>
         <div class="row" id="aboutRow">
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="aboutHeading">
-            <h1> <strong>ODIO FASCILISIS</strong></h1>
+            <h1 style="margin: 5vh 0;"> <strong>ODIO FASCILISIS</strong></h1>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="aboutPara">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra tellus in hac habitasse platea dictumst. Purus in mollis nunc sed id semper risus in hendrerit. Lorem sed risus ultricies tristique. Fermentum dui faucibus in ornare. Massa id neque aliquam vestibulum morbi blandit cursus. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Eget duis at tellus at urna condimentum mattis pellentesque. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus a pellentesque sit amet porttitor eget dolor morbi non. Ac orci phasellus egestas tellus rutrum. Turpis massa tincidunt dui ut ornare.</p>
+            <p id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra tellus in hac habitasse platea dictumst. Purus in mollis nunc sed id semper risus in hendrerit. Lorem sed risus ultricies tristique. Fermentum dui faucibus in ornare. Massa id neque aliquam vestibulum morbi blandit cursus. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Eget duis at tellus at urna condimentum mattis pellentesque. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus a pellentesque sit amet porttitor eget dolor morbi non. Ac orci phasellus egestas tellus rutrum. Turpis massa tincidunt dui ut ornare.</p>
           </div>
         </div>
       </div>
@@ -84,6 +84,10 @@ export default {
 </script>
 
 <style>
+:root{
+  --textContentSize: 1.3rem;
+}
+
 .container-fluid {
   padding: 0;
 }
@@ -113,7 +117,7 @@ export default {
 
 @media (min-width: 992px) {
   .carousel-inner img {
-    height: 90vh;
+    height: 85vh;
     object-fit: cover;
   }
 }
@@ -121,9 +125,20 @@ export default {
 #aboutRow{
 
   height: 50vh;
+  margin: 5vh 0;
 }
 
-#aboutHeading{
-
+#aboutPara{
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+#about{
+ font-size: var(--textContentSize);
+ text-align: justify;
+ margin-left: 5vw;
+ margin-right: 5vw;
+line-height: 40px;
+padding-top: 5vh;
 }
 </style>
