@@ -8,6 +8,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
+      <button class="btn btn-dark " type="button" id="carouselButton">Click me</button>
       <img class="d-block w-100" src="../assets/wide-firewatch.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
@@ -41,6 +42,8 @@ export default {
 <style>
 .carousel-item{
   background-color: rgb(220, 218, 178);
+  position: relative;
+  
 }
 @media(max-width: 800px){
 
@@ -64,5 +67,12 @@ export default {
   object-fit: cover;
 
   }
+}
+#carouselButton{
+  position: absolute;
+  top: 50%;
+  right: 47.8%;
+  
+
 }
 </style>
