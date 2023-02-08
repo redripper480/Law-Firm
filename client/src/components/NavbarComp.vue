@@ -1,9 +1,9 @@
 <template>
   <nav
-    class="navbar navbar-expand-md fixed-top navbar-light navbar-light"
+    class="navbar navbar-expand-lg fixed-top navbar-light "
     id="main-nav"
   >
-    <a class="navbar-brand" href="#"> <strong>LAW </strong>FIRM</a>
+    <a class="navbar-brand custom-text" href="#" id="navText0"> <strong>LAW </strong>FIRM</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -17,13 +17,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#"
+        <a class="nav-item nav-link custom-text active" id="navText1" href="#"
           >Home <span class="sr-only">(current)</span></a
         >
-        <a class="nav-item nav-link" href="#">About Us</a>
-        <a class="nav-item nav-link" href="#">Our Staff</a>
-        <a class="nav-item nav-link" href="#">Services</a>
-        <a class="nav-item nav-link" href="#">Contact Us</a>
+        <a class="nav-item nav-link custom-text"  id="navText2" href="#">About Us</a>
+        <a class="nav-item nav-link custom-text" id="navText3" href="#">Our Staff</a>
+        <a class="nav-item nav-link custom-text" id="navText4" href="#">Services</a>
+        <button class="nav-item nav-link custom-text btn btn-danger" type="button" id="navText5" href="#" style="color: white !important;">Contact Us</button>
       </div>
     </div>
   </nav>
@@ -31,6 +31,7 @@
 
 <script>
 import $ from "jquery";
+
 export default {
   name: "NavbarComp",
   mounted() {
@@ -40,10 +41,24 @@ export default {
       $(window).on("scroll", function () {
         if ($(document).scrollTop() > 50) {
           $("#main-nav").addClass("afterScroll", "navbar-light");
+          for(let i = 0; i <= 5; i++){
+            $("#navText"+i.toString()).removeClass("custom-text");
+          }
         } else {
           $("#main-nav").removeClass("afterScroll", "navbar-light");
+          for(let i = 0; i <= 5; i++){
+            $("#navText"+i.toString()).addClass("custom-text");
+          }
+          
+
         }
       });
+
+      for(let i = 0; i <= 5; i++){
+            $("#navText"+i.toString()).on('click', function(){
+              $("#navbarNavAltMarkup").collapse('hide');
+            })
+          }
     });
   },
 };
@@ -51,9 +66,11 @@ export default {
 
 <style>
 :root {
-  --navbarColor: rgba(255, 255, 255, 0.5);
+  --navbarColor: rgba(255, 255, 255, 0);
+  --textColorBeforeScroll: white;
   --postScrollColor: rgb(128, 249, 249);
   --postScrollPadding: 0.8rem;
+  --preScrollFontSize: 1.2rem;
 }
 .collapse {
   justify-content: end;
@@ -72,9 +89,23 @@ export default {
   bottom: 0;
   left: 0;
 }
+@media (max-width: 576px) {
+
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+
+@media (min-width: 992px) {
+.navbar{
+  padding: 2rem 5rem 0 5rem;
+}
+}
 .navbar {
   background-color: var(--navbarColor);
-
   transition-duration: 0.5s;
 }
 
@@ -83,4 +114,18 @@ export default {
   padding-bottom: var(--postScrollPadding);
   background-color: var(--postScrollColor);
 }
+
+.custom-text{
+  color: var(--textColorBeforeScroll) !important;
+  font-size: var(--preScrollFontSize);
+}
+
+#navText0{
+  font-size: calc(var(--preScrollFontSize) + 0.2rem);
+}
+
+#navText5{
+  transition-duration: 0.5s;
+}
+
 </style>

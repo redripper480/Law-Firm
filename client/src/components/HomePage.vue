@@ -22,14 +22,14 @@
             <div class="carousel-item">
               <img
                 class="d-block w-100"
-                src="../assets/img1.jpg"
+                src="../assets/img3.jpg"
                 alt="First slide"
               />
             </div>
             <div class="carousel-item">
               <img
                 class="d-block w-100"
-                src="../assets/img2.jpg"
+                src="../assets/img3.jpg"
                 alt="Second slide"
               />
             </div>
@@ -61,12 +61,21 @@
           </a>
         </div>
         <div class="row" id="aboutRow">
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="aboutHeading">
-            <h1 style="margin: 5vh 0;"> <strong>ODIO FASCILISIS</strong></h1>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" id="aboutImageContainer">
+            <img src="../assets/courtroom1.jpg" alt="court_room" style="right: 2%;" id="aboutimage">
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="aboutPara">
-            <p id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra tellus in hac habitasse platea dictumst. Purus in mollis nunc sed id semper risus in hendrerit. Lorem sed risus ultricies tristique. Fermentum dui faucibus in ornare. Massa id neque aliquam vestibulum morbi blandit cursus. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Eget duis at tellus at urna condimentum mattis pellentesque. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus a pellentesque sit amet porttitor eget dolor morbi non. Ac orci phasellus egestas tellus rutrum. Turpis massa tincidunt dui ut ornare.</p>
-          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" id="aboutPara">
+            <div class="row">
+              <div class="col-12 inner-col">
+                <h1 style="margin: 5vh 0; display: inline-block;" > <strong>ODIO FASCILISIS</strong></h1>
+           
+              </div>
+              <div class="col-12 inner-col">
+                <p id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra tellus in hac habitasse platea dictumst. Purus in mollis nunc sed id semper risus in hendrerit. Lorem sed risus ultricies tristique. Fermentum dui faucibus in ornare. Massa id neque aliquam vestibulum morbi blandit cursus. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Eget duis at tellus at urna condimentum mattis pellentesque. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus a pellentesque sit amet porttitor eget dolor morbi non. Ac orci phasellus egestas tellus rutrum. Turpis massa tincidunt dui ut ornare.</p>
+           
+              </div>
+            </div>
+            </div>
         </div>
       </div>
     </section>
@@ -96,10 +105,24 @@ export default {
   position: relative;
 }
 
+#about{
+ font-size: var(--textContentSize);
+ text-align: justify;
+
+ margin-right: 5vw;
+line-height: 40px;
+}
 @media (max-width: 576px) {
   .carousel-inner img {
     height: 60vh;
     object-fit: cover;
+  }
+  #about{
+    padding-top: 0;
+  }
+  #aboutimage{
+    width: 100%;
+    height: 100%;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -107,11 +130,26 @@ export default {
     height: 60vh;
     object-fit: cover;
   }
+  #about{
+    padding-top: 0;
+  }
+  #aboutimage{
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .carousel-inner img {
     height: 80vh;
     object-fit: cover;
+  }
+  #about{
+    padding-top: 0vh;
+  }
+  #aboutimage{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/1;
   }
 }
 
@@ -120,6 +158,10 @@ export default {
     height: 85vh;
     object-fit: cover;
   }
+  #about{
+    padding-top: 0vh;
+  }
+
 }
 
 #aboutRow{
@@ -128,17 +170,16 @@ export default {
   margin: 5vh 0;
 }
 
-#aboutPara{
+.inner-col{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#aboutImageContainer{
   display: flex;
   align-items: center;
-  width: 100vw;
-}
-#about{
- font-size: var(--textContentSize);
- text-align: justify;
- margin-left: 5vw;
- margin-right: 5vw;
-line-height: 40px;
-padding-top: 5vh;
+  justify-content: center;
+  object-fit: cover;
 }
 </style>
