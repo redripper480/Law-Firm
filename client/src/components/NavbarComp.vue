@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg fixed-top navbar-light" id="main-nav">
+  <nav class="navbar navbar-expand-lg fixed-top fixed navbar-light" id="main-nav">
     <a class="navbar-brand custom-text before-scroll-title" href="#" id="navText0">
       <strong>LAW </strong>FIRM</a
     >
@@ -11,6 +11,7 @@
       aria-controls="navbarNavAltMarkup"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      id="toggleButton"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,7 +50,7 @@ export default {
   name: "NavbarComp",
   mounted() {
     // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-
+    let menuClick = false 
     $(document).ready(function () {
       $(window).on("scroll", function () {
         if ($(document).scrollTop() > 50) {
@@ -73,10 +74,22 @@ export default {
           }
         }
       });
+      $("#toggleButton").on("click", function(){
+        if(menuClick == false){
+        $("#main-nav").addClass("bcg-change");
+          menuClick = true
+      }
+        else{
+          $("#main-nav").removeClass("bcg-change");
+          menuClick = false
+        }
 
+      });
       for (let i = 0; i <= 5; i++) {
         $("#navText" + i.toString()).on("click", function () {
           $("#navbarNavAltMarkup").collapse("hide");
+          $("#main-nav").removeClass("bcg-change");
+
         });
       }
     });
@@ -102,15 +115,25 @@ export default {
 }
 
 @media (max-width: 576px) {
+  .navbar{
+    position: fixed;
+  }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
+  .navbar{
+    position: fixed;
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .navbar{
+    position: fixed;
+  }
 }
 
 @media (min-width: 992px) {
   .navbar {
     padding: 2rem 5rem 0 5rem;
+    position: fixed;
   }
 }
 .navbar {
@@ -122,6 +145,11 @@ export default {
   padding-top: var(--postScrollPadding);
   padding-bottom: var(--postScrollPadding);
   background-color: var(--postScrollColor);
+}
+
+.bcg-change{
+  background-color: var(--postScrollColor);
+
 }
 
 .custom-text {
