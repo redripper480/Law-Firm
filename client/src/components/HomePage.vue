@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <NavbarComp />
     <section id="Body">
-      <div style="height: 300vh">
+      <div >
         <div
           id="carouselExampleControls"
           class="carousel slide"
@@ -87,7 +87,7 @@
                     border-radius: 50%;
                   "
                   id="aboutimage"
-                  class ="hiddenRight"
+                  class="hiddenRight"
                 />
               </div>
             </div>
@@ -111,7 +111,7 @@
                     border-radius: 50%;
                   "
                   id="aboutimage"
-                  class ="hiddenLeft"
+                  class="hiddenLeft"
                 />
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 inner-col">
@@ -170,6 +170,34 @@
             </div>
           </div>
         </div>
+        <div id="contactDiv">
+          <div class="row" style="margin: 0;">
+            <div class="col-6 col-md-12 col-lg-12">
+              Contact Us
+            </div>
+            <div class="col-6 col-md-12 col-lg-12">
+              <div class="row" style="margin: 0; padding: 5% 15%;">
+                <div class="col-12 col-md-3 col-lg-3">
+                  Facebook
+                </div>
+                <div class="col-12 col-md-3 col-lg-3">
+                  Instagram
+                </div>
+                <div class="col-12 col-md-3 col-lg-3">
+                  Gmail
+                </div>
+                <div class="col-12 col-md-3 col-lg-3">
+                  Twitter
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="footerSection">
+      <div id="footer">
+
       </div>
     </section>
   </div>
@@ -184,31 +212,33 @@ export default {
     NavbarComp,
   },
   mounted() {
-
-    let observer = new IntersectionObserver((entries) =>{
+    let observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-
-        if(entry.isIntersecting){
-          entry.target.classList.add('show')
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
         }
-      })
+      });
     });
 
-    let observerRight = new IntersectionObserver((entries) =>{
+    let observerRight = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-
-        if(entry.isIntersecting){
-          entry.target.classList.add('show')
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
         }
-      })
+      });
     });
 
     let LeftHiddenElements = document.querySelectorAll(".hiddenLeft");
-    LeftHiddenElements.forEach((element) => {observer.observe(element); console.log(element)});
+    LeftHiddenElements.forEach((element) => {
+      observer.observe(element);
+      console.log(element);
+    });
 
     let RightHiddenElements = document.querySelectorAll(".hiddenRight");
-    RightHiddenElements.forEach((element) => {observerRight.observe(element); console.log(element)});
-
+    RightHiddenElements.forEach((element) => {
+      observerRight.observe(element);
+      console.log(element);
+    });
 
     let stats = document.querySelectorAll(".count");
     let interval = 1;
@@ -217,8 +247,8 @@ export default {
       let startVal = 0;
       let endVal = parseInt(stat.getAttribute("data-val"));
       let duration = Math.floor(interval / endVal);
-      let increment = endVal - (endVal % 3)
-      let additional_increment = endVal % 3
+      let increment = endVal - (endVal % 3);
+      let additional_increment = endVal % 3;
       let counter = setInterval(function () {
         startVal += 3;
         stat.textContent = startVal;
@@ -250,7 +280,14 @@ export default {
   --topDicColor: rgb(25, 25, 25);
   --shadowColor: rgb(68, 68, 68);
   --textColor: white;
+  --footerColor:rgb(63, 63, 63);
 }
+
+#footer{
+  height: 50vh;
+  background-color: var(--footerColor);
+}
+
 h2 {
   font-size: 0.8rem;
   text-align: center;
@@ -433,24 +470,23 @@ h3 {
   backdrop-filter: blur(5px);
 }
 
-.hiddenLeft{
+.hiddenLeft {
   filter: blur(5px);
   transition: all 0.5s;
   opacity: 0;
   transform: translateX(-100%);
 }
 
-.hiddenRight{
+.hiddenRight {
   filter: blur(5px);
   transition: all 0.5s;
   opacity: 0;
   transform: translateX(100%);
 }
-.show{
+.show {
   filter: blur(0);
   opacity: 1;
   transform: translateX(0);
-
 }
 
 .rows {
