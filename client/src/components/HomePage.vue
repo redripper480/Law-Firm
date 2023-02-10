@@ -204,6 +204,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 import NavbarComp from "./NavbarComp.vue";
 import $ from "jquery";
 export default {
@@ -212,6 +213,18 @@ export default {
     NavbarComp,
   },
   mounted() {
+    var scrollThrottle = _.throttle(() =>{
+      if ($(document).scrollTop() > 50) {
+          $("#containerAbout").addClass("afterScrollAbout");
+        } else {
+          $("#containerAbout").removeClass("afterScrollAbout");
+        }
+    }, 200);
+
+    $(document).ready(function () {
+      $(window).on("scroll", scrollThrottle);
+    });
+    
     let observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -260,15 +273,6 @@ export default {
       }, duration);
     });
 
-    $(document).ready(function () {
-      $(window).on("scroll", function () {
-        if ($(document).scrollTop() > 50) {
-          $("#containerAbout").addClass("afterScrollAbout");
-        } else {
-          $("#containerAbout").removeClass("afterScrollAbout");
-        }
-      });
-    });
   },
 };
 </script>

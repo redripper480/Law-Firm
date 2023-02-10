@@ -1,6 +1,13 @@
 <template>
-  <nav class="navbar navbar-expand-lg fixed-top fixed navbar-light" id="main-nav">
-    <a class="navbar-brand custom-text before-scroll-title" href="#" id="navText0">
+  <nav
+    class="navbar navbar-expand-lg fixed-top fixed navbar-light"
+    id="main-nav"
+  >
+    <a
+      class="navbar-brand custom-text before-scroll-title"
+      href="#"
+      id="navText0"
+    >
       <strong>LAW </strong>FIRM</a
     >
     <button
@@ -45,51 +52,48 @@
 
 <script>
 import $ from "jquery";
+import _ from 'lodash'
 
 export default {
   name: "NavbarComp",
   mounted() {
     // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    let menuClick = false 
-    $(document).ready(function () {
-      $(window).on("scroll", function () {
-        if ($(document).scrollTop() > 50) {
+    let menuClick = false;
+    let throttledScroll = _.throttle(() => {
+      if ($(document).scrollTop() > 50) {
+        $("#main-nav").addClass("afterScroll", "navbar-light");
+        $("#navText0").addClass("after-scroll-title");
+        $("#navText0").removeClass("before-scroll-title");
 
-          $("#main-nav").addClass("afterScroll", "navbar-light");
-          $("#navText0").addClass("after-scroll-title");
-          $("#navText0").removeClass("before-scroll-title");
-
-          for (let i = 0; i <= 5; i++) {
-            $("#navText" + i.toString()).removeClass("custom-text");
-          }
-
-        } else {
-
-          $("#main-nav").removeClass("afterScroll", "navbar-light");
-          $("#navText0").addClass("before-scroll-title");
-          $("#navText0").removeClass("after-scroll-title");
-
-          for (let i = 0; i <= 5; i++) {
-            $("#navText" + i.toString()).addClass("custom-text");
-          }
+        for (let i = 0; i <= 5; i++) {
+          $("#navText" + i.toString()).removeClass("custom-text");
         }
-      });
-      $("#toggleButton").on("click", function(){
-        if(menuClick == false){
-        $("#main-nav").addClass("bcg-change");
-          menuClick = true
+      } else {
+        $("#main-nav").removeClass("afterScroll", "navbar-light");
+        $("#navText0").addClass("before-scroll-title");
+        $("#navText0").removeClass("after-scroll-title");
+
+        for (let i = 0; i <= 5; i++) {
+          $("#navText" + i.toString()).addClass("custom-text");
+        }
       }
-        else{
-          $("#main-nav").removeClass("bcg-change");
-          menuClick = false
-        }
+    }, 200);
+    $(document).ready(function () {
+      $(window).on("scroll", throttledScroll);
 
+      $("#toggleButton").on("click", function () {
+        if (menuClick == false) {
+          $("#main-nav").addClass("bcg-change");
+          menuClick = true;
+        } else {
+          $("#main-nav").removeClass("bcg-change");
+          menuClick = false;
+        }
       });
       for (let i = 0; i <= 5; i++) {
         $("#navText" + i.toString()).on("click", function () {
           $("#navbarNavAltMarkup").collapse("hide");
           $("#main-nav").removeClass("bcg-change");
-
         });
       }
     });
@@ -115,17 +119,17 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .navbar{
+  .navbar {
     position: fixed;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .navbar{
+  .navbar {
     position: fixed;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .navbar{
+  .navbar {
     position: fixed;
   }
 }
@@ -147,9 +151,8 @@ export default {
   background-color: var(--postScrollColor);
 }
 
-.bcg-change{
+.bcg-change {
   background-color: var(--postScrollColor);
-
 }
 
 .custom-text {
@@ -164,11 +167,11 @@ export default {
   font-size: calc(var(--preScrollFontSize) + 0.5rem) !important;
 }
 
-.before-scroll-title{
+.before-scroll-title {
   font-size: calc(var(--preScrollFontSize) + 1rem) !important;
 }
 
-#navText0{
+#navText0 {
   transition-duration: 0.5s;
 }
 </style>
