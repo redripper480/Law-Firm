@@ -61,17 +61,25 @@
           </a>
         </div>
         <div class="mid-section-holder">
-          <div class="aboutContainer">
-            <div class="row" id="aboutRow">
+          <div class="aboutContainer" id="containerAbout">
+            <div class="row rows">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 inner-col">
-                <h1 style="text-align: left; display: inline">Hello</h1>
-
-                <p>
-                  This here is a holder text, I didnot use Lorem Ipsum because
-                  to be honest, it looks extremely Ugly and the gibberish makes
-                  you feel like the design is hirrbily done whereas its not the
-                  design but the text that it holds.
-                </p>
+                <div class="row">
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                    style="margin-bottom: 5vh"
+                  >
+                    <h1 class="aboutHeading"> <strong> Education Consultants</strong></h1>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p class="aboutText">
+                      This here is a holder text, I didnot use Lorem Ipsum
+                      because to be honest, it looks extremely Ugly and the
+                      gibberish makes you feel like the design is hirrbily done
+                      whereas its not the design but the text that it holds.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div
                 class="col-xs-12 col-sm-12 col-md-12 col-lg-6"
@@ -90,6 +98,47 @@
                 />
               </div>
             </div>
+
+            <hr style="border-bottom: 10px dotted; width: 10vw;">
+
+            <div class="row rows">
+              <div
+                class="col-xs-12 col-sm-12 col-md-12 col-lg-6"
+                id="aboutImageContainer"
+              >
+                <img
+                  src="../assets/courtroom1.jpg"
+                  alt="court_room"
+                  style="
+                    width: 350px;
+                    height: 350px;
+                    right: 2%;
+                    border-radius: 50%;
+                  "
+                  id="aboutimage"
+                />
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 inner-col">
+                <div class="row">
+                  <div
+                    class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                    style="margin-bottom: 5vh"
+                  >
+                    <h1 class="aboutHeading"> <strong> Education Consultants</strong></h1>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p class="aboutText">
+                      This here is a holder text, I didnot use Lorem Ipsum
+                      because to be honest, it looks extremely Ugly and the
+                      gibberish makes you feel like the design is hirrbily done
+                      whereas its not the design but the text that it holds.
+                    </p>
+                  </div>
+                </div>
+              </div>
+       
+            </div>
+
           </div>
         </div>
       </div>
@@ -109,9 +158,9 @@ export default {
     $(document).ready(function () {
       $(window).on("scroll", function () {
         if ($(document).scrollTop() > 50) {
-          $("#aboutRow").addClass("afterScrollAbout");
+          $("#containerAbout").addClass("afterScrollAbout");
         } else {
-          $("#aboutRow").removeClass("afterScrollAbout");
+          $("#containerAbout").removeClass("afterScrollAbout");
         }
       });
     });
@@ -122,6 +171,10 @@ export default {
 <style>
 :root {
   --textContentSize: 1.3rem;
+  --backgroundcolor: rgb(0, 0, 0);
+  --topDicColor: rgb(25, 25, 25);
+  --shadowColor: rgb(68, 68, 68);
+  --textColor: white;
 }
 
 .container-fluid {
@@ -151,6 +204,12 @@ export default {
     width: 100%;
     height: 100%;
   }
+  .aboutContainer {
+    margin: 0 8%;
+  }
+  #aboutImageContainer {
+    visibility: collapse;
+  }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   .carousel-inner img {
@@ -163,6 +222,12 @@ export default {
   #aboutimage {
     width: 100%;
     height: 100%;
+  }
+  .aboutContainer {
+    margin: 0 8%;
+  }
+  #aboutImageContainer {
+    visibility: collapse;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -178,6 +243,9 @@ export default {
     height: 100%;
     aspect-ratio: 4/1;
   }
+  .aboutContainer {
+    margin: 0 15%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -188,20 +256,28 @@ export default {
   #about {
     padding-top: 0vh;
   }
+  .aboutContainer {
+    margin: 0 15%;
+  }
 }
 
 #aboutRow {
   height: 50vh;
   transition-duration: 0.5s;
 }
-.afterScrollAbout{
-transform: translateY(-100px);
-background-color: rgb(166, 166, 166);
+.afterScrollAbout {
+  transform: translateY(-15vh);
+  background-color: var(--topDicColor);
+  box-shadow: 3px 3px 5px 0px var(--shadowColor);
 }
 .inner-col {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.aboutContainer{
+  transition-duration: 0.8s;
 }
 
 #aboutImageContainer {
@@ -210,10 +286,26 @@ background-color: rgb(166, 166, 166);
   justify-content: center;
   object-fit: cover;
 }
-.aboutContainer {
-  padding: 0 15%;
+
+.aboutText {
+  text-align: left;
+  text-align: justify;
+  margin-left: 3vw;
+  color: var(--textColor);
 }
+
+.aboutHeading {
+  text-align: left;
+  margin-left: 3vw;
+  color: var(--textColor);
+}
+
 .mid-section-holder {
-  background-color: gray;
+  background-color: var(--backgroundcolor);
+  backdrop-filter: blur(5px);
+}
+
+.rows{
+  padding: 7vh 0;
 }
 </style>

@@ -29,7 +29,7 @@
           >Services</a
         >
         <button
-          class="nav-item nav-link custom-text btn btn-danger"
+          class="nav-item nav-link custom-text btn btn-dark"
           type="button"
           id="navText5"
           href="#"
@@ -88,7 +88,7 @@ export default {
 :root {
   --navbarColor: rgba(255, 255, 255, 0);
   --textColorBeforeScroll: white;
-  --postScrollColor: rgb(128, 249, 249);
+  --postScrollColor: rgb(233, 233, 233);
   --postScrollPadding: 0.8rem;
   --preScrollFontSize: 1.2rem;
 }
@@ -100,15 +100,7 @@ export default {
   transition-duration: 0.5s;
   position: relative;
 }
-.nav-item:hover::after {
-  content: "";
-  height: 2px;
-  widows: 100%;
-  background-color: greenyellow;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
+
 @media (max-width: 576px) {
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
