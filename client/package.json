@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fontsource/aclonica": "^4.5.9",
+    "@fontsource/montserrat": "^4.5.14",
     "core-js": "^3.8.3",
     "vue": "^3.2.45",
     "vue-popperjs": "^2.3.0"

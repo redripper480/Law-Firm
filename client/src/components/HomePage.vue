@@ -60,22 +60,37 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
-        <div class="row" id="aboutRow">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" id="aboutImageContainer">
-            <img src="../assets/courtroom1.jpg" alt="court_room" style="right: 2%;" id="aboutimage">
+        <div class="mid-section-holder">
+          <div class="aboutContainer">
+            <div class="row" id="aboutRow">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 inner-col">
+                <h1 style="text-align: left; display: inline">Hello</h1>
+
+                <p>
+                  This here is a holder text, I didnot use Lorem Ipsum because
+                  to be honest, it looks extremely Ugly and the gibberish makes
+                  you feel like the design is hirrbily done whereas its not the
+                  design but the text that it holds.
+                </p>
+              </div>
+              <div
+                class="col-xs-12 col-sm-12 col-md-12 col-lg-6"
+                id="aboutImageContainer"
+              >
+                <img
+                  src="../assets/courtroom1.jpg"
+                  alt="court_room"
+                  style="
+                    width: 350px;
+                    height: 350px;
+                    right: 2%;
+                    border-radius: 50%;
+                  "
+                  id="aboutimage"
+                />
+              </div>
+            </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" id="aboutPara">
-            <div class="row">
-              <div class="col-12 inner-col">
-                <h1 style="margin: 5vh 0; display: inline-block;" > <strong>ODIO FASCILISIS</strong></h1>
-           
-              </div>
-              <div class="col-12 inner-col">
-                <p id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra tellus in hac habitasse platea dictumst. Purus in mollis nunc sed id semper risus in hendrerit. Lorem sed risus ultricies tristique. Fermentum dui faucibus in ornare. Massa id neque aliquam vestibulum morbi blandit cursus. Ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Eget duis at tellus at urna condimentum mattis pellentesque. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus a pellentesque sit amet porttitor eget dolor morbi non. Ac orci phasellus egestas tellus rutrum. Turpis massa tincidunt dui ut ornare.</p>
-           
-              </div>
-            </div>
-            </div>
         </div>
       </div>
     </section>
@@ -84,16 +99,28 @@
 
 <script>
 import NavbarComp from "./NavbarComp.vue";
+import $ from "jquery";
 export default {
   name: "HomePage",
   components: {
     NavbarComp,
   },
+  mounted() {
+    $(document).ready(function () {
+      $(window).on("scroll", function () {
+        if ($(document).scrollTop() > 50) {
+          $("#aboutRow").addClass("afterScrollAbout");
+        } else {
+          $("#aboutRow").removeClass("afterScrollAbout");
+        }
+      });
+    });
+  },
 };
 </script>
 
 <style>
-:root{
+:root {
   --textContentSize: 1.3rem;
 }
 
@@ -105,22 +132,22 @@ export default {
   position: relative;
 }
 
-#about{
- font-size: var(--textContentSize);
- text-align: justify;
+#about {
+  font-size: var(--textContentSize);
+  text-align: justify;
 
- margin-right: 5vw;
-line-height: 40px;
+  margin-right: 5vw;
+  line-height: 40px;
 }
 @media (max-width: 576px) {
   .carousel-inner img {
     height: 60vh;
     object-fit: cover;
   }
-  #about{
+  #about {
     padding-top: 0;
   }
-  #aboutimage{
+  #aboutimage {
     width: 100%;
     height: 100%;
   }
@@ -130,10 +157,10 @@ line-height: 40px;
     height: 60vh;
     object-fit: cover;
   }
-  #about{
+  #about {
     padding-top: 0;
   }
-  #aboutimage{
+  #aboutimage {
     width: 100%;
     height: 100%;
   }
@@ -143,10 +170,10 @@ line-height: 40px;
     height: 80vh;
     object-fit: cover;
   }
-  #about{
+  #about {
     padding-top: 0vh;
   }
-  #aboutimage{
+  #aboutimage {
     width: 100%;
     height: 100%;
     aspect-ratio: 4/1;
@@ -158,28 +185,35 @@ line-height: 40px;
     height: 85vh;
     object-fit: cover;
   }
-  #about{
+  #about {
     padding-top: 0vh;
   }
-
 }
 
-#aboutRow{
-
+#aboutRow {
   height: 50vh;
-  margin: 5vh 0;
+  transition-duration: 0.5s;
+}
+.afterScrollAbout{
+transform: translateY(-100px);
+background-color: rgb(166, 166, 166);
+}
+.inner-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.inner-col{
-    display: flex;
-    align-items: center;
-    justify-content: left;
-}
-
-#aboutImageContainer{
+#aboutImageContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   object-fit: cover;
+}
+.aboutContainer {
+  padding: 0 15%;
+}
+.mid-section-holder {
+  background-color: gray;
 }
 </style>
