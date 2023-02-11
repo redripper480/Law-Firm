@@ -5,17 +5,24 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import App from './App.vue'
 
-/* import the fontawesome core */
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 
-/* import font awesome icon component */
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-/* import specific icons */
-import { faGavel } from '@fortawesome/free-solid-svg-icons'
 
-/* add icons to the library */
-library.add(faGavel)
+import { faGavel } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+
+
+import { faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+
+
+
+library.add(faGavel, faFacebook, faTwitter, faInstagram ,faEnvelope )
 
 // import "@fontsource/montserrat/100.css"
 // import "@fontsource/montserrat/200.css"

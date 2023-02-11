@@ -38,6 +38,11 @@
 export default {
   name: "StatBar",
   mounted() {
+
+
+    
+
+
     let stats = document.querySelectorAll(".count");
     let interval = 1;
     console.log(stats);
@@ -57,6 +62,9 @@ export default {
         }
       }, duration);
     });
+
+
+
   },
 };
 </script>

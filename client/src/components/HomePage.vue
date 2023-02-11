@@ -137,13 +137,11 @@
             </div>
           </div>
         </div>
-       <StatBar></StatBar>
-        <ContactUsBar></ContactUsBar>
+       <StatBar></StatBar> 
+       <ContactUsBar></ContactUsBar>
       </div>
     </section>
-    <section id="footerSection">
-      <div id="footer"></div>
-    </section>
+    <FooterSection></FooterSection>
   </div>
 </template>
 
@@ -152,6 +150,7 @@ import _ from "lodash";
 import NavbarComp from "./NavbarComp.vue";
 import StatBar from "./StatBar.vue"
 import ContactUsBar from "./ContactUsBar.vue";
+import FooterSection from "./FooterSection.vue"
 import $ from "jquery";
 export default {
   name: "HomePage",
@@ -159,8 +158,10 @@ export default {
     NavbarComp,
     StatBar,
     ContactUsBar,
+    FooterSection,
   },
   mounted() {
+
     var scrollThrottle = _.throttle(() => {
       if ($(document).scrollTop() > 50) {
         $("#containerAbout").addClass("afterScrollAbout");
@@ -169,30 +170,38 @@ export default {
       }
     }, 200);
 
+    var scrollAboutThrottle = _.throttle((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+        else{
+          entry.target.classList.remove("show");
+        }
+      });
+    }, 200);
+
+    var scrollAboutRightThrottle = _.throttle((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+        else{
+          entry.target.classList.remove("show");
+        }
+      });
+    }, 200);
+
     $(document).ready(function () {
       $(window).on("scroll", scrollThrottle);
     });
 
     let observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-        else{
-          entry.target.classList.remove("show");
-        }
-      });
+      scrollAboutThrottle(entries);
     });
 
     let observerRight = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-        else{
-          entry.target.classList.remove("show");
-        }
-      });
+      scrollAboutRightThrottle(entries);
     });
 
     let LeftHiddenElements = document.querySelectorAll(".hiddenLeft");
@@ -222,10 +231,6 @@ export default {
   --footerColor: rgb(63, 63, 63);
 }
 
-#footer {
-  height: 50vh;
-  background-color: var(--footerColor);
-}
 
 
 
@@ -331,7 +336,7 @@ export default {
 }
 
 .aboutContainer {
-  transition-duration: 0.8s;
+  transition-duration: 0.5s;
 }
 
 #aboutImageContainer {
@@ -372,6 +377,8 @@ export default {
   transition: all 0.5s;
   opacity: 0;
   transform: translateX(100%);
+  overflow-x: hidden;
+
 }
 .show {
   filter: blur(0);
