@@ -93,24 +93,29 @@ export default {
 
 @media (max-width: 576px) {
   .hidden-divider {
-    visibility: visible;
+    display: contents;
   }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   .hidden-divider {
-    visibility: visible;
+    display: contents;
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
     .hidden-divider {
-    visibility: collapse;
+        display: none;
   }
 }
 
 @media (min-width: 992px) {
     .hidden-divider {
-    visibility: collapse;
+    display: none;
   }
+}
+
+.row{
+  margin: 0;
+  padding: 0;
 }
 .footerPara {
   text-align: left;

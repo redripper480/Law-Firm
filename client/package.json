@@ -18,7 +18,8 @@
     "core-js": "^3.8.3",
     "lodash": "^4.17.21",
     "vue": "^3.2.45",
-    "vue-popperjs": "^2.3.0"
+    "vue-popperjs": "^2.3.0",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

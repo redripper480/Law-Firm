@@ -59,12 +59,12 @@
                     class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
                     style="margin-bottom: 5vh"
                   >
-                    <h1 class="aboutHeading hiddenLeft">
+                    <h1 class="aboutHeading hiddenLeft hidden-element">
                       <strong> Education Consultants</strong>
                     </h1>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <p class="aboutText hiddenLeft">
+                    <p class="aboutText hiddenLeft hidden-element">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Sit amet tellus cras adipiscing enim eu turpis
@@ -87,7 +87,7 @@
                     border-radius: 50%;
                   "
                   id="aboutimage"
-                  class="hiddenRight"
+                  class="hiddenRight hidden-element"
                 />
               </div>
             </div>
@@ -111,7 +111,7 @@
                     border-radius: 50%;
                   "
                   id="aboutimage"
-                  class="hiddenLeft"
+                  class="hiddenLeft hidden-element"
                 />
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 inner-col">
@@ -120,12 +120,12 @@
                     class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
                     style="margin-bottom: 5vh"
                   >
-                    <h1 class="aboutHeading hiddenRight">
+                    <h1 class="aboutHeading hiddenRight hidden-element">
                       <strong> Education Consultants</strong>
                     </h1>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <p class="aboutText hiddenRight">
+                    <p class="aboutText hiddenRight hidden-element">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et dolore magna
                       aliqua. Sit amet tellus cras adipiscing enim eu turpis
@@ -169,53 +169,31 @@ export default {
         $("#containerAbout").removeClass("afterScrollAbout");
       }
     }, 200);
-
-    var scrollAboutThrottle = _.throttle((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-        else{
-          entry.target.classList.remove("show");
-        }
-      });
-    }, 200);
-
-    var scrollAboutRightThrottle = _.throttle((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-        else{
-          entry.target.classList.remove("show");
-        }
-      });
-    }, 200);
-
+    
     $(document).ready(function () {
       $(window).on("scroll", scrollThrottle);
     });
 
+
+
     let observer = new IntersectionObserver((entries) => {
-      scrollAboutThrottle(entries);
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+        else{
+          entry.target.classList.remove("show");
+        }
+      });
     });
 
-    let observerRight = new IntersectionObserver((entries) => {
-      scrollAboutRightThrottle(entries);
-    });
 
-    let LeftHiddenElements = document.querySelectorAll(".hiddenLeft");
-    LeftHiddenElements.forEach((element) => {
+
+    let HiddenElements = document.querySelectorAll(".hidden-element");
+    HiddenElements.forEach((element) => {
       observer.observe(element);
       console.log(element);
     });
-
-    let RightHiddenElements = document.querySelectorAll(".hiddenRight");
-    RightHiddenElements.forEach((element) => {
-      observerRight.observe(element);
-      console.log(element);
-    });
-
     
   },
 };
@@ -242,22 +220,13 @@ export default {
   position: relative;
 }
 
-#about {
-  font-size: var(--textContentSize);
-  text-align: justify;
-
-  margin-right: 5vw;
-  line-height: 40px;
-}
 
 @media (max-width: 576px) {
   .carousel-inner img {
     height: 60vh;
     object-fit: cover;
   }
-  #about {
-    padding-top: 0;
-  }
+
   #aboutimage {
     visibility: collapse;
   }
@@ -267,6 +236,9 @@ export default {
   #aboutImageContainer {
     visibility: collapse;
     height: 0;
+  }
+  .hiddenRight{
+    transform: translateX(-100%);
   }
 
 }
@@ -275,9 +247,7 @@ export default {
     height: 60vh;
     object-fit: cover;
   }
-  #about {
-    padding-top: 0;
-  }
+
   #aboutimage {
     visibility: collapse;
   }
@@ -288,15 +258,16 @@ export default {
     visibility: collapse;
     height: 0;
   }
+  .hiddenRight{
+    transform: translateX(-100%);
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .carousel-inner img {
     height: 80vh;
     object-fit: cover;
   }
-  #about {
-    padding-top: 0vh;
-  }
+
   #aboutimage {
     width: 100%;
     height: 100%;
@@ -305,6 +276,9 @@ export default {
   .aboutContainer {
     margin: 0 6%;
   }
+  .hiddenRight{
+    transform: translateX(100%);
+  }
 }
 
 @media (min-width: 992px) {
@@ -312,11 +286,12 @@ export default {
     height: 85vh;
     object-fit: cover;
   }
-  #about {
-    padding-top: 0vh;
-  }
+
   .aboutContainer {
     margin: 0 15%;
+  }
+  .hiddenRight{
+    transform: translateX(100%);
   }
 }
 
@@ -362,7 +337,6 @@ export default {
 
 .mid-section-holder {
   background-color: var(--backgroundcolor);
-  backdrop-filter: blur(5px);
 }
 
 .hiddenLeft {
@@ -376,7 +350,6 @@ export default {
   filter: blur(5px);
   transition: all 0.5s;
   opacity: 0;
-  transform: translateX(100%);
   overflow-x: hidden;
 
 }
