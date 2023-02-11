@@ -7,10 +7,10 @@
       </div>
       <div class="col-12 col-md-12 col-lg-12">
         <div class="row" id="innerConactRow">
-          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><font-awesome-icon icon="fa-brands fa-facebook" /></div>
-          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><font-awesome-icon icon="fa-brands fa-instagram" /></div>
-          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><font-awesome-icon icon="fa-solid fa-envelope" /></div>
-          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><font-awesome-icon icon="fa-brands fa-twitter" /></div>
+          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href="https://www.facebook.com/"><font-awesome-icon icon="fa-brands fa-facebook" /></a></div>
+          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href=""><font-awesome-icon icon="fa-brands fa-instagram" /></a> </div>
+          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href=""><font-awesome-icon icon="fa-solid fa-envelope" /></a></div>
+          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href=""><font-awesome-icon icon="fa-brands fa-twitter" /></a></div>
         </div>
       </div>
     </div>
@@ -129,8 +129,11 @@ transition-duration: 1s;
     transform: translateX(0);
 }
 
-.socialIcon:hover {
-  color: rgb(121, 121, 121);
+.icons{
+    color: black;
+}
+.icons:hover{
+    color: gray;
 }
 
 
