@@ -1,5 +1,5 @@
 <template>
-  <div class="row" style="margin: 0" id="testimonials">
+  <div class="row stat-row" style="margin: 0" id="testimonials">
     <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 statCol">
       <div class="statBox">
         <font-awesome-icon class="icon" icon="fa-solid fa-gavel" />
@@ -38,13 +38,31 @@
 export default {
   name: "StatBar",
   mounted() {
+    let calledOnce = false
+
+    let observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if(calledOnce === false){
+            calledOnce = true
+          callbackCount()
+          }
+        }
+        
+      });
+    });
 
 
-    
 
+    let statsRow = document.querySelectorAll(".stat-row");
+    statsRow.forEach((element) => {
+      observer.observe(element);
+      console.log(element);
+    });
 
-    let stats = document.querySelectorAll(".count");
-    let interval = 1;
+let callbackCount = function(){
+  let stats = document.querySelectorAll(".count");
+    let interval = 5000;
     console.log(stats);
     stats.forEach((stat) => {
       let startVal = 0;
@@ -63,6 +81,8 @@ export default {
       }, duration);
     });
 
+}
+   
 
 
   },
