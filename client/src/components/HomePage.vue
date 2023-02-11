@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <NavbarComp />
     <section id="Body">
-      <div >
+      <div>
         <div
           id="carouselExampleControls"
           class="carousel slide"
@@ -137,98 +137,49 @@
             </div>
           </div>
         </div>
-        <div class="row" style="margin: 0" id="testimonials">
-          <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 statCol">
-            <div class="statBox">
-              <h3>Helloooo</h3>
-              <span class="count" data-val="69"> <strong> 000</strong></span>
-              <h2><strong> CASES WON </strong></h2>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 statCol">
-            <div class="statBox">
-              <h3>Helloooo</h3>
-
-              <span class="count" data-val="89"><strong> 000</strong></span>
-              <h2><strong> STUDENTS HELPED </strong></h2>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 statCol">
-            <div class="statBox">
-              <h3>Helloooo</h3>
-
-              <span class="count" data-val="280"><strong> 000</strong></span>
-              <h2><strong> SOMETHING HELPED </strong></h2>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-3 statCol">
-            <div class="statBox">
-              <h3>Helloooo</h3>
-
-              <span class="count" data-val="403"><strong> 000</strong></span>
-              <h2><strong> SOMETHING HELPED </strong></h2>
-            </div>
-          </div>
-        </div>
-        <div id="contactDiv">
-          <div class="row" style="margin: 0;">
-            <div class="col-6 col-md-12 col-lg-12">
-              Contact Us
-            </div>
-            <div class="col-6 col-md-12 col-lg-12">
-              <div class="row" style="margin: 0; padding: 5% 15%;">
-                <div class="col-12 col-md-3 col-lg-3">
-                  Facebook
-                </div>
-                <div class="col-12 col-md-3 col-lg-3">
-                  Instagram
-                </div>
-                <div class="col-12 col-md-3 col-lg-3">
-                  Gmail
-                </div>
-                <div class="col-12 col-md-3 col-lg-3">
-                  Twitter
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+       <StatBar></StatBar>
+        <ContactUsBar></ContactUsBar>
       </div>
     </section>
     <section id="footerSection">
-      <div id="footer">
-
-      </div>
+      <div id="footer"></div>
     </section>
   </div>
 </template>
 
 <script>
-import _ from 'lodash'
+import _ from "lodash";
 import NavbarComp from "./NavbarComp.vue";
+import StatBar from "./StatBar.vue"
+import ContactUsBar from "./ContactUsBar.vue";
 import $ from "jquery";
 export default {
   name: "HomePage",
   components: {
     NavbarComp,
+    StatBar,
+    ContactUsBar,
   },
   mounted() {
-    var scrollThrottle = _.throttle(() =>{
+    var scrollThrottle = _.throttle(() => {
       if ($(document).scrollTop() > 50) {
-          $("#containerAbout").addClass("afterScrollAbout");
-        } else {
-          $("#containerAbout").removeClass("afterScrollAbout");
-        }
+        $("#containerAbout").addClass("afterScrollAbout");
+      } else {
+        $("#containerAbout").removeClass("afterScrollAbout");
+      }
     }, 200);
 
     $(document).ready(function () {
       $(window).on("scroll", scrollThrottle);
     });
-    
+
     let observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
+        }
+        else{
+          entry.target.classList.remove("show");
         }
       });
     });
@@ -237,6 +188,9 @@ export default {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
+        }
+        else{
+          entry.target.classList.remove("show");
         }
       });
     });
@@ -253,26 +207,7 @@ export default {
       console.log(element);
     });
 
-    let stats = document.querySelectorAll(".count");
-    let interval = 1;
-    console.log(stats);
-    stats.forEach((stat) => {
-      let startVal = 0;
-      let endVal = parseInt(stat.getAttribute("data-val"));
-      let duration = Math.floor(interval / endVal);
-      let increment = endVal - (endVal % 3);
-      let additional_increment = endVal % 3;
-      let counter = setInterval(function () {
-        startVal += 3;
-        stat.textContent = startVal;
-        if (startVal == increment) {
-          startVal += additional_increment;
-          stat.textContent = startVal;
-          clearInterval(counter);
-        }
-      }, duration);
-    });
-
+    
   },
 };
 </script>
@@ -284,58 +219,15 @@ export default {
   --topDicColor: rgb(25, 25, 25);
   --shadowColor: rgb(68, 68, 68);
   --textColor: white;
-  --footerColor:rgb(63, 63, 63);
+  --footerColor: rgb(63, 63, 63);
 }
 
-#footer{
+#footer {
   height: 50vh;
   background-color: var(--footerColor);
 }
 
-h2 {
-  font-size: 0.8rem;
-  text-align: center;
-  margin: 2vh 0;
-  color: var(--textColor);
-}
 
-h3 {
-  color: white;
-}
-
-.count {
-  margin-top: 2vh;
-  font-size: 2.5rem;
-  color: var(--textColor);
-}
-
-.statBox {
-  height: fit-content;
-  margin: 2vh;
-  height: 20vh;
-  width: 20vh;
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
-  background-color: black;
-  padding: 0;
-  margin: 2vh 0;
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
-  border-bottom: 10px solid;
-  border-color: rgb(203, 203, 203);
-  position: relative;
-  padding: 1vh 0 0 0;
-}
-.statCol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#testimonials {
-  background-color: rgb(32, 32, 32);
-  padding: 5vh 0;
-}
 
 .container-fluid {
   padding: 0;
@@ -371,13 +263,7 @@ h3 {
     visibility: collapse;
     height: 0;
   }
-  .statBox {
-    width: 100vw !important;
-    border-bottom-left-radius: 1%;
-    border-bottom-right-radius: 1%;
-    border-top-left-radius: 2%;
-    border-top-right-radius: 2%;
-  }
+
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   .carousel-inner img {
