@@ -6,7 +6,7 @@ import ContactUsPage from "../components/ContactUsPage.vue"
 
 const routes = [
     {
-        path: '/',
+        path: '/Law-Firm/',
         component: HomePage
     },
     {
