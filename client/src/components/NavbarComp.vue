@@ -25,22 +25,22 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link custom-text active" id="navText1" href="/"
+          <a class="nav-item nav-link custom-text active" id="navText1" href="/Law-Firm/"
             >Home <span class="sr-only">(current)</span></a
           >
-          <a class="nav-item nav-link custom-text" id="navText2" href="/about"
+          <a class="nav-item nav-link custom-text" id="navText2" href="/Law-Firm/about"
             >About Us</a
           >
           <a
             class="nav-item nav-link custom-text"
             id="navText3"
-            href="/our-staff"
+            href="/Law-Firm/our-staff"
             >Our Staff</a
           >
           <a class="nav-item nav-link custom-text" id="navText4" href="#"
             >Services</a
           >
-          <a class="contact-nav-btn"  href="/contact-us"> <button
+          <a class="contact-nav-btn"  href="/Law-Firm/contact-us"> <button
             class="nav-item nav-link custom-text btn btn-dark"
             type="button"
             id="navText5"

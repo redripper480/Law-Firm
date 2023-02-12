@@ -3,7 +3,7 @@
     <div class="row" id="contactRow">
       <div class="col-12 col-md-12 col-lg-12">
         <p id="contactPara"> <strong> Get Started With Us Today. </strong></p>
-        <a href="/contact-us"><button class="btn btn-dark" type="button">Contact Us</button></a>
+        <a href="/Law-Firm/contact-us"><button class="btn btn-dark" type="button">Contact Us</button></a>
       </div>
       <div class="col-12 col-md-12 col-lg-12">
         <div class="row" id="innerConactRow">
