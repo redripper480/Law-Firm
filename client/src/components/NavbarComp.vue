@@ -24,13 +24,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link custom-text active" id="navText1" href="#"
+        <a class="nav-item nav-link custom-text active" id="navText1" href="/"
           >Home <span class="sr-only">(current)</span></a
         >
-        <a class="nav-item nav-link custom-text" id="navText2" href="#"
+        <a class="nav-item nav-link custom-text" id="navText2" href="/about"
           >About Us</a
         >
-        <a class="nav-item nav-link custom-text" id="navText3" href="#"
+        <a class="nav-item nav-link custom-text" id="navText3" href="/our-staff"
           >Our Staff</a
         >
         <a class="nav-item nav-link custom-text" id="navText4" href="#"

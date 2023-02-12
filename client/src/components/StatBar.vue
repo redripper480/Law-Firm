@@ -62,7 +62,8 @@ export default {
 
 let callbackCount = function(){
   let stats = document.querySelectorAll(".count");
-    let interval = 5000;
+
+    let interval = 7500;
     console.log(stats);
     stats.forEach((stat) => {
       let startVal = 0;

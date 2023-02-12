@@ -103,18 +103,18 @@ export default {
 }
 
 #socialIcons:nth-child(4){
-transition-duration: 1s;
+transition-duration: 1.5s;
 }
 #socialIcons:nth-child(3){
-    transition-duration: 0.75s;
+    transition-duration: 1.125s;
 
 }
 #socialIcons:nth-child(2){
-    transition-duration: 0.50s;
+    transition-duration: 0.75s;
 
 }
 #socialIcons:nth-child(1){
-    transition-duration: 0.25s;
+    transition-duration: 0.375s;
 }
 
 .hiddenSocials{
