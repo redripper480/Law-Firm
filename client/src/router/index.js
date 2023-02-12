@@ -25,6 +25,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
+  base:'/Law-Firm/',
   routes,
 });
 

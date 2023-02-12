@@ -13,9 +13,9 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua
                 </p>
-                <a class="leftAlignFooter footerLink" href="/Law-Firm/about">Our Mission</a>
-                <a class="leftAlignFooter footerLink" href="/Law-Firm/our-staff">Our Staff</a>
-                <a class="leftAlignFooter footerLink" href="/Law-Firm/services">Our Services</a>
+                <a class="leftAlignFooter footerLink" href="/about">Our Mission</a>
+                <a class="leftAlignFooter footerLink" href="/our-staff">Our Staff</a>
+                <a class="leftAlignFooter footerLink" href="/services">Our Services</a>
               </div>
             </div>
             <hr class="footer-divider hidden-divider" />
@@ -103,14 +103,10 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .hidden-divider {
-    display: contents;
-  }
+
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .hidden-divider {
-    display: contents;
-  }
+
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .hidden-divider {
