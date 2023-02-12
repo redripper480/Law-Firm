@@ -40,15 +40,15 @@
           <a class="nav-item nav-link custom-text" id="navText4" href="#"
             >Services</a
           >
-          <button
+          <a class="contact-nav-btn"  href="/contact-us"> <button
             class="nav-item nav-link custom-text btn btn-dark"
             type="button"
             id="navText5"
             style="color: white !important"
           >
-          <a href="/contact-us" class="contact-button"> Contact Us</a>
-           
-          </button>
+            Contact Us
+          </button></a>
+         
         </div>
       </div>
     </nav>
@@ -194,10 +194,10 @@ export default {
 #navText0 {
   transition-duration: 0.5s;
 }
-.contact-button{
+.contact-nav-btn{
   color: white;
 }
-.contact-button:hover{
+.contact-nav-btn:hover{
   color: gray;
   text-decoration: none;
 }
