@@ -15,6 +15,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import { faGavel } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
+
 
 
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
@@ -23,7 +26,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 
 
-library.add(faGavel, faFacebook, faTwitter, faInstagram ,faEnvelope )
+library.add(faGavel, faFacebook, faTwitter, faInstagram ,faEnvelope,faLocationDot,faPhone )
 
 import "@fontsource/montserrat/100.css"
 import "@fontsource/montserrat/200.css"
@@ -34,7 +37,6 @@ import "@fontsource/montserrat/600.css"
 import "@fontsource/montserrat/700.css"
 import "@fontsource/montserrat/800.css"
 import "@fontsource/montserrat/900.css"
-import "@fontsource/aclonica"
 
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)

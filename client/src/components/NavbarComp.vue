@@ -44,10 +44,10 @@
             class="nav-item nav-link custom-text btn btn-dark"
             type="button"
             id="navText5"
-            href="#"
             style="color: white !important"
           >
-            Contact Us
+          <a href="/contact-us" class="contact-button"> Contact Us</a>
+           
           </button>
         </div>
       </div>
@@ -193,5 +193,12 @@ export default {
 
 #navText0 {
   transition-duration: 0.5s;
+}
+.contact-button{
+  color: white;
+}
+.contact-button:hover{
+  color: gray;
+  text-decoration: none;
 }
 </style>

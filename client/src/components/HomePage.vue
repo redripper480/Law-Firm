@@ -350,7 +350,8 @@ export default {
   filter: blur(5px);
   transition: all 0.5s;
   opacity: 0;
-  overflow-x: hidden;
+  overflow: hidden;
+
 
 }
 .show {

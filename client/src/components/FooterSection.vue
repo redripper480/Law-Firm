@@ -13,9 +13,9 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua
                 </p>
-                <a class="leftAlignFooter footerLink" href="">Our Mission</a>
-                <a class="leftAlignFooter footerLink" href="">Our Staff</a>
-                <a class="leftAlignFooter footerLink" href="">Our Services</a>
+                <a class="leftAlignFooter footerLink" href="/about">Our Mission</a>
+                <a class="leftAlignFooter footerLink" href="/our-staff">Our Staff</a>
+                <a class="leftAlignFooter footerLink" href="/services">Our Services</a>
               </div>
             </div>
             <hr class="footer-divider hidden-divider" />
@@ -49,16 +49,26 @@
                   <h1 class="footerHeading">Socials</h1>
                 </div>
                 <div class="col-3 footer-social-icon">
-                  <font-awesome-icon icon="fa-brands fa-facebook" />
+                  <a class="footer-social-hyperlink" target="_blank" href="https://www.facebook.com/">
+                    <font-awesome-icon icon="fa-brands fa-facebook" />
+                  </a>
                 </div>
                 <div class="col-3 footer-social-icon">
+                  <a class="footer-social-hyperlink" target="_blank" href="https://www.instagram.com/">
                   <font-awesome-icon icon="fa-brands fa-instagram" />
+                  </a>
                 </div>
                 <div class="col-3 footer-social-icon">
+                  <a class="footer-social-hyperlink" target="_blank" href="mailto:user@domain.com?Subject=Hello%20User">
+
                   <font-awesome-icon icon="fa-solid fa-envelope" />
+                  </a>
                 </div>
                 <div class="col-3 footer-social-icon">
+                  <a class="footer-social-hyperlink" target="_blank" href="https://twitter.com/">
+
                   <font-awesome-icon icon="fa-brands fa-twitter" />
+                  </a>
                 </div>
               </div>
             </div>
@@ -66,15 +76,16 @@
         </div>
         <hr class="footer-divider" />
         <div class="col-12" id="legals">
-            <a class="inline-legals footerLink" href="">Legal</a>
-            <p class="spacer inline-legals">|</p>
-            <a class="inline-legals footerLink" href="">Legal</a>
-            <p class="spacer inline-legals">|</p>
+          <a class="inline-legals footerLink" href="">Legal</a>
+          <p class="spacer inline-legals">|</p>
+          <a class="inline-legals footerLink" href="">Legal</a>
+          <p class="spacer inline-legals">|</p>
 
-            <a class="inline-legals footerLink" href="">Legal</a>
-
+          <a class="inline-legals footerLink" href="">Legal</a>
         </div>
-        <div class="col-12" id="legals"><p>Law Firm Copyright All rights reserved.</p></div>
+        <div class="col-12" id="legals">
+          <p>Law Firm Copyright All rights reserved.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -102,18 +113,18 @@ export default {
   }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .hidden-divider {
-        display: none;
-  }
-}
-
-@media (min-width: 992px) {
-    .hidden-divider {
+  .hidden-divider {
     display: none;
   }
 }
 
-.row{
+@media (min-width: 992px) {
+  .hidden-divider {
+    display: none;
+  }
+}
+
+.row {
   margin: 0;
   padding: 0;
 }
@@ -138,8 +149,8 @@ export default {
 .footerRow {
   margin: 0;
 }
-.spacer{
-    margin: 0 1vw;
+.spacer {
+  margin: 0 1vw;
 }
 #legals {
   margin-top: 3vh;
@@ -150,8 +161,8 @@ export default {
 .leftAlignFooter {
   text-align: left;
 }
-.inline-legals{
-    display: inline;
+.inline-legals {
+  display: inline;
 }
 .footerLink {
   color: black;
@@ -164,15 +175,17 @@ export default {
   color: var(--footerTextColor);
 }
 
-.footer-social-icon {
-  font-size: 30px;
-}
-.footer-social-icon:hover {
-  color: white;
-}
 
+
+
+.footer-social-hyperlink{
+  font-size: 30px;
+  color: black;
+}
+.footer-social-hyperlink:hover{
+color: white;
+}
 .socials-row {
   margin: 0 2vw;
 }
-
 </style>

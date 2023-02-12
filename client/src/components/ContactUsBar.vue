@@ -3,14 +3,14 @@
     <div class="row" id="contactRow">
       <div class="col-12 col-md-12 col-lg-12">
         <p id="contactPara"> <strong> Get Started With Us Today. </strong></p>
-        <button class="btn btn-dark" type="button">Contact Us</button>
+        <a href="/contact-us"><button class="btn btn-dark" type="button">Contact Us</button></a>
       </div>
       <div class="col-12 col-md-12 col-lg-12">
         <div class="row" id="innerConactRow">
           <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href="https://www.facebook.com/"><font-awesome-icon icon="fa-brands fa-facebook" /></a></div>
-          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href=""><font-awesome-icon icon="fa-brands fa-instagram" /></a> </div>
-          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href=""><font-awesome-icon icon="fa-solid fa-envelope" /></a></div>
-          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href=""><font-awesome-icon icon="fa-brands fa-twitter" /></a></div>
+          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href="https://www.instagram.com/"><font-awesome-icon icon="fa-brands fa-instagram" /></a> </div>
+          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href="mailto:user@domain.com?Subject=Hello%20User"><font-awesome-icon icon="fa-solid fa-envelope" /></a></div>
+          <div class="col-3 col-md-3 col-lg-3 socialIcon hiddenSocials" id="socialIcons" ><a class="icons" target="_blank" href="https://twitter.com/"><font-awesome-icon icon="fa-brands fa-twitter" /></a></div>
         </div>
       </div>
     </div>
