@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <NavbarComp />
+    <NavbarComp :textcolor="white" />
     <section id="Body">
       <div>
         <div

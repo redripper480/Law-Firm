@@ -1,63 +1,82 @@
 <template>
-  <nav
-    class="navbar navbar-expand-lg fixed-top fixed navbar-light"
-    id="main-nav"
-  >
-    <a
-      class="navbar-brand custom-text before-scroll-title"
-      href="#"
-      id="navText0"
+  <div :style="{ '--textColorBeforeScroll': textColor }">
+    <nav
+      class="navbar navbar-expand-lg fixed-top fixed navbar-light"
+      id="main-nav"
     >
-      <strong>LAW </strong>FIRM</a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      id="toggleButton"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link custom-text active" id="navText1" href="/"
-          >Home <span class="sr-only">(current)</span></a
-        >
-        <a class="nav-item nav-link custom-text" id="navText2" href="/about"
-          >About Us</a
-        >
-        <a class="nav-item nav-link custom-text" id="navText3" href="/our-staff"
-          >Our Staff</a
-        >
-        <a class="nav-item nav-link custom-text" id="navText4" href="#"
-          >Services</a
-        >
-        <button
-          class="nav-item nav-link custom-text btn btn-dark"
-          type="button"
-          id="navText5"
-          href="#"
-          style="color: white !important"
-        >
-          Contact Us
-        </button>
+      <a
+        class="navbar-brand custom-text before-scroll-title"
+        href="#"
+        id="navText0"
+      >
+        <strong>LAW </strong>FIRM</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        id="toggleButton"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link custom-text active" id="navText1" href="/"
+            >Home <span class="sr-only">(current)</span></a
+          >
+          <a class="nav-item nav-link custom-text" id="navText2" href="/about"
+            >About Us</a
+          >
+          <a
+            class="nav-item nav-link custom-text"
+            id="navText3"
+            href="/our-staff"
+            >Our Staff</a
+          >
+          <a class="nav-item nav-link custom-text" id="navText4" href="#"
+            >Services</a
+          >
+          <button
+            class="nav-item nav-link custom-text btn btn-dark"
+            type="button"
+            id="navText5"
+            href="#"
+            style="color: white !important"
+          >
+            Contact Us
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <script>
 import $ from "jquery";
-import _ from 'lodash'
+import _ from "lodash";
 
 export default {
   name: "NavbarComp",
+  computed: {
+    textColor() {
+      switch (this.$route.path) {
+        case "/":
+          return "white";
+        case "/about":
+          return "black";
+        case "/contact-us":
+          return "black";
+        default:
+          return "white";
+      }
+    },
+  },
+
   mounted() {
-    // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
     let menuClick = false;
     let throttledScroll = _.throttle(() => {
       if ($(document).scrollTop() > 50) {
@@ -70,6 +89,7 @@ export default {
         }
       } else {
         $("#main-nav").removeClass("afterScroll", "navbar-light");
+
         $("#navText0").addClass("before-scroll-title");
         $("#navText0").removeClass("after-scroll-title");
 

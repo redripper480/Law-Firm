@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <NavbarComp></NavbarComp>
+    <NavbarComp :textcolor="black"/>
     <div class="about-us-container">
       <div class="about-title">
         <h1 id="about-title-page-heading">ABOUT <strong>LAW </strong> FIRM.</h1>
@@ -8,32 +8,7 @@
       <div class="mid-section-holder">
         <div class="aboutContainer" id="containerAbout">
           <div class="row rows">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 inner-col">
-              <div class="row">
-                <div
-                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
-                  style="margin-bottom: 5vh"
-                >
-                  <h1 class="aboutHeading hiddenLeft hidden-element">
-                    <strong> What We Do.</strong>
-                  </h1>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <p class="aboutText hiddenLeft hidden-element">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Sit amet tellus cras adipiscing enim eu turpis
-                    egestas. Venenatis lectus magna fringilla urna porttitor. ,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Sit amet tellus cras adipiscing enim eu turpis
-                    egestas. Venenatis lectus magna fringilla urna porttitor.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-xs-12 col-sm-12 col-md-12 col-lg-6"
-              id="aboutImageContainer"
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" id="aboutImageContainer"
             >
               <img
                 src="../assets/courtroom1.jpg"
@@ -45,9 +20,33 @@
                   border-radius: 50%;
                 "
                 id="aboutimage"
-                class="hiddenRight hidden-element"
+                class="hiddenLeft hidden-element"
               />
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 inner-col">
+              <div class="row">
+                <div
+                  class="col-xs-12 col-sm-12 col-md-12 col-lg-12"
+                  style="margin-bottom: 5vh"
+                >
+                  <h1 class="aboutHeading hiddenRight hidden-element">
+                    <strong> What We Do.</strong>
+                  </h1>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <p class="aboutText hiddenRight hidden-element">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Sit amet tellus cras adipiscing enim eu turpis
+                    egestas. Venenatis lectus magna fringilla urna porttitor. ,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Sit amet tellus cras adipiscing enim eu turpis
+                    egestas. Venenatis lectus magna fringilla urna porttitor.
+                  </p>
+                </div>
+              </div>
+            </div>
+           
           </div>
 
           <hr
@@ -99,7 +98,7 @@
               </div>
             </div>
           </div>
-          
+
           <hr
             style="border-bottom: 10px dotted; width: 10vw; color: aliceblue"
           />
