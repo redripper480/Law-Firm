@@ -40,14 +40,14 @@
           <a class="nav-item nav-link custom-text" id="navText4" href="#"
             >Services</a
           >
-          <a class="nav-item nav-link custom-text"  href="/contact-us"> <button
+           <button
             class="nav-item nav-link custom-text btn btn-dark"
             type="button"
             id="navText5"
             style="color: white !important"
           >
-            Contact Us
-          </button></a>
+          <a class="contact-nav-btn"  href="/contact-us">Contact Us</a>
+          </button>
          
         </div>
       </div>
@@ -125,7 +125,7 @@ export default {
 :root {
   --navbarColor: rgba(255, 255, 255, 0);
   --textColorBeforeScroll: white;
-  --postScrollColor: rgb(233, 233, 233);
+  --postScrollColor: rgb(156, 156, 156);
   --postScrollPadding: 0.8rem;
   --preScrollFontSize: 1.2rem;
 }
@@ -194,5 +194,12 @@ export default {
 #navText0 {
   transition-duration: 0.5s;
 }
-
+.contact-nav-btn{
+  text-align: center;
+  color: white;
+}
+.contact-nav-btn:hover{
+  color: gray;
+  text-decoration: none;
+}
 </style>
