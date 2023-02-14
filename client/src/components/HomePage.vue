@@ -237,9 +237,9 @@ export default {
     visibility: collapse;
     height: 0;
   }
-  .hiddenRight{
+  /* .hiddenRight{
     transform: translateX(-100%);
-  }
+  } */
 
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -258,9 +258,9 @@ export default {
     visibility: collapse;
     height: 0;
   }
-  .hiddenRight{
+  /* .hiddenRight{
     transform: translateX(-100%);
-  }
+  } */
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .carousel-inner img {
@@ -276,9 +276,9 @@ export default {
   .aboutContainer {
     margin: 0 6%;
   }
-  .hiddenRight{
-    transform: translateX(-100%);
-  }
+  /* .hiddenRight{
+    transform: translateX(-10%);
+  } */
 }
 
 @media (min-width: 992px) {
@@ -290,9 +290,9 @@ export default {
   .aboutContainer {
     margin: 0 15%;
   }
-  .hiddenRight{
-    transform: translateX(-100%);
-  }
+  /* .hiddenRight{
+
+  } */
 }
 
 #aboutRow {

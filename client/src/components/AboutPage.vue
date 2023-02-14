@@ -239,7 +239,7 @@ export default {
     margin: 0 6%;
   }
   .hiddenRight {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 }
 
