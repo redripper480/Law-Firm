@@ -45,8 +45,9 @@
             type="button"
             id="navText5"
             style="color: white !important"
+            onclick="location.href='/contact-us'"
           >
-          <a class="contact-nav-btn"  href="/contact-us">Contact Us</a>
+          Contact Us
           </button>
          
         </div>
@@ -69,6 +70,8 @@ export default {
         case "/about":
           return "black";
         case "/contact-us":
+          return "black";
+          case "/our-staff":
           return "black";
         default:
           return "white";

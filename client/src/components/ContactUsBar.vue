@@ -3,7 +3,7 @@
     <div class="row" id="contactRow">
       <div class="col-12 col-md-12 col-lg-12">
         <p id="contactPara"> <strong> Get Started With Us Today. </strong></p>
-        <a href="/contact-us"><button class="btn btn-dark" type="button">Contact Us</button></a>
+       <button class="btn btn-dark" type="button" onclick="location.href='/contact-us'">Contact Us</button>
       </div>
       <div class="col-12 col-md-12 col-lg-12">
         <div class="row" id="innerConactRow">
@@ -136,5 +136,7 @@ transition-duration: 1.5s;
     color: gray;
 }
 
-
+.aboutContainer {
+  transition-duration: 0.5s;
+}
 </style>

@@ -137,8 +137,8 @@
             </div>
           </div>
         </div>
-       <StatBar></StatBar> 
-       <ContactUsBar></ContactUsBar>
+        <StatBar></StatBar>
+        <ContactUsBar></ContactUsBar>
       </div>
     </section>
     <FooterSection></FooterSection>
@@ -148,9 +148,9 @@
 <script>
 import _ from "lodash";
 import NavbarComp from "./NavbarComp.vue";
-import StatBar from "./StatBar.vue"
+import StatBar from "./StatBar.vue";
 import ContactUsBar from "./ContactUsBar.vue";
-import FooterSection from "./FooterSection.vue"
+import FooterSection from "./FooterSection.vue";
 import $ from "jquery";
 export default {
   name: "HomePage",
@@ -161,40 +161,33 @@ export default {
     FooterSection,
   },
   mounted() {
-
     var scrollThrottle = _.throttle(() => {
       if ($(document).scrollTop() > 50) {
         $("#containerAbout").addClass("afterScrollAbout");
       } else {
         $("#containerAbout").removeClass("afterScrollAbout");
       }
-    }, 200);
-    
+    }, 50);
+
     $(document).ready(function () {
       $(window).on("scroll", scrollThrottle);
     });
-
-
 
     let observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-        }
-        else{
+        } else {
           entry.target.classList.remove("show");
         }
       });
     });
-
-
 
     let HiddenElements = document.querySelectorAll(".hidden-element");
     HiddenElements.forEach((element) => {
       observer.observe(element);
       console.log(element);
     });
-    
   },
 };
 </script>
@@ -209,9 +202,6 @@ export default {
   --footerColor: rgb(63, 63, 63);
 }
 
-
-
-
 .container-fluid {
   padding: 0;
 }
@@ -219,7 +209,6 @@ export default {
   background-color: rgb(220, 218, 178);
   position: relative;
 }
-
 
 @media (max-width: 576px) {
   .carousel-inner img {
@@ -237,10 +226,9 @@ export default {
     visibility: collapse;
     height: 0;
   }
-  /* .hiddenRight{
+  .hiddenRight {
     transform: translateX(-100%);
-  } */
-
+  }
 }
 @media (min-width: 576px) and (max-width: 767.98px) {
   .carousel-inner img {
@@ -258,9 +246,9 @@ export default {
     visibility: collapse;
     height: 0;
   }
-  /* .hiddenRight{
+  .hiddenRight {
     transform: translateX(-100%);
-  } */
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .carousel-inner img {
@@ -276,9 +264,9 @@ export default {
   .aboutContainer {
     margin: 0 6%;
   }
-  /* .hiddenRight{
-    transform: translateX(-10%);
-  } */
+  .hiddenRight {
+    transform: translateX(100%);
+  }
 }
 
 @media (min-width: 992px) {
@@ -290,9 +278,9 @@ export default {
   .aboutContainer {
     margin: 0 15%;
   }
-  /* .hiddenRight{
-
-  } */
+  .hiddenRight {
+    transform: translateX(100%);
+  }
 }
 
 #aboutRow {
@@ -351,8 +339,6 @@ export default {
   transition: all 0.5s;
   opacity: 0;
   overflow: hidden;
-
-
 }
 .show {
   filter: blur(0);
@@ -363,4 +349,5 @@ export default {
 .rows {
   padding: 7vh 0;
 }
+
 </style>

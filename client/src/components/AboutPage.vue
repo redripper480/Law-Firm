@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <NavbarComp :textcolor="black"/>
+    <NavbarComp :textcolor="black" />
     <div class="about-us-container">
       <div class="about-title">
         <h1 id="about-title-page-heading">ABOUT <strong>LAW </strong> FIRM.</h1>
@@ -8,7 +8,9 @@
       <div class="mid-section-holder">
         <div class="aboutContainer" id="containerAbout">
           <div class="row rows">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6" id="aboutImageContainer"
+            <div
+              class="col-xs-12 col-sm-12 col-md-12 col-lg-6"
+              id="aboutImageContainer"
             >
               <img
                 src="../assets/courtroom1.jpg"
@@ -46,7 +48,6 @@
                 </div>
               </div>
             </div>
-           
           </div>
 
           <hr
@@ -160,6 +161,7 @@ import $ from "jquery";
 import _ from "lodash";
 import NavbarComp from "./NavbarComp.vue";
 import FooterSection from "./FooterSection.vue";
+
 export default {
   name: "AboutPage",
   components: {
